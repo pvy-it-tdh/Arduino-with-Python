@@ -11,11 +11,12 @@ void loop() {
   }
   String data="";
   data=Serial.readStringUntil('\r');
-  if(data=="ON");
+  data.trim();
+  if(data=="ON")
   {
     digitalWrite(LED_BUILTIN,HIGH);
   }
-  if(data=="OFF")
+  else if (data=="OFF")
   {
     digitalWrite(LED_BUILTIN,LOW);
   }
